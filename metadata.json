@@ -6,7 +6,7 @@
     "3.10", 
     "3.12"
   ], 
-  "url": "", 
+  "url": "https://github.com/laserb/gnome-shell-extension-suspend-button", 
   "uuid": "suspend-button@laserb", 
-  "version": 3
+  "version": 4
 }

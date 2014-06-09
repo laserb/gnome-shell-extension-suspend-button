@@ -29,7 +29,7 @@ msgstr "Zwei Knöpfe anstelle eines einzelnen anzeigen."
 
 #: prefs.js:29
 msgid "Suspend default"
-msgstr "Standard: Ruhezustand"
+msgstr "Standard: Standby"
 
 #: prefs.js:29
 msgid ""
@@ -37,13 +37,13 @@ msgid ""
 "Press alt to shutdown.\n"
 "This setting has no effect if two buttons are shown."
 msgstr ""
-"Das Standardverhalten des Ausschaltknopfes als Ruhezustand festlegen.\n"
+"Das Standardverhalten des Ausschaltknopfes als Standby festlegen.\n"
 "Zum Herunterfahren ALT gedrückt halten.\n"
 "Diese Einstellung hat keinen Effekt, wenn zwei Knöpfe angezeigt werden."
 
 #: extension.js:116
 msgid "Suspend"
-msgstr "Ruhezustand"
+msgstr "Standby"
 
 #: extension.js:119
 msgid "Power Off"

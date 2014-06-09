@@ -6,17 +6,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Gnome-Shell-Erweiterung Suspend Button\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-17 13:26+0200\n"
-"PO-Revision-Date: 2014-05-17 13:26+0200\n"
-"Last-Translator: Raphael Freudiger <laser_b@gmx.ch>\n"
-"Language-Team: German\n"
-"Language: de_CH\n"
+"PO-Revision-Date: 2014-06-07 16:42+0100\n"
+"Last-Translator: Jonatan Zeidler <jonatan_zeidler@gmx.de>\n"
+"Language-Team: German <jonatan_zeidler@gmx.de>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: prefs.js:28
 msgid "Two buttons"
@@ -24,11 +25,11 @@ msgstr "Zwei Knöpfe"
 
 #: prefs.js:28
 msgid "Show two distinct buttons instead of alt-switch-button."
-msgstr "Zeige zwei Knöpfe anstelle eines einzelnen an."
+msgstr "Zwei Knöpfe anstelle eines einzelnen anzeigen."
 
 #: prefs.js:29
 msgid "Suspend default"
-msgstr "Standard: Suspend"
+msgstr "Standard: Standby"
 
 #: prefs.js:29
 msgid ""
@@ -36,13 +37,13 @@ msgid ""
 "Press alt to shutdown.\n"
 "This setting has no effect if two buttons are shown."
 msgstr ""
-"Ändere das Standardverhalten des Ausschaltknopfes auf suspend.\n"
-"Alt gedrückt halten um herunterzufahren.\n"
+"Das Standardverhalten des Ausschaltknopfes als Standby festlegen.\n"
+"Zum Herunterfahren ALT gedrückt halten.\n"
 "Diese Einstellung hat keinen Effekt, wenn zwei Knöpfe angezeigt werden."
 
 #: extension.js:116
 msgid "Suspend"
-msgstr "Suspend"
+msgstr "Standby"
 
 #: extension.js:119
 msgid "Power Off"

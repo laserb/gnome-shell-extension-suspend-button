@@ -4,9 +4,10 @@
   "settings-schema": "org.gnome.shell.extensions.suspend-button", 
   "shell-version": [
     "3.10", 
-    "3.12"
+    "3.12",
+    "3.14"
   ], 
   "url": "https://github.com/laserb/gnome-shell-extension-suspend-button", 
   "uuid": "suspend-button@laserb", 
-  "version": 4
+  "version": 5
 }

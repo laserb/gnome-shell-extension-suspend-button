@@ -18,6 +18,8 @@ const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
 const Gettext = imports.gettext;
 
+const Config = imports.misc.config;
+
 function getSettings(extension) {
     let schemaName = 'org.gnome.shell.extensions.suspend-button';
     let schemaDir = extension.dir.get_child('schemas').get_path();
@@ -49,6 +51,6 @@ function initTranslations(extension) {
     // Extension installed system-wide
     else {
         Gettext.bindtextdomain('gnome-shell-extension-suspend-button',
-            extension.metadata.locale);
+            Config.LOCALEDIR);
     }
 }

@@ -195,6 +195,6 @@ const Extension = new Lang.Class({
 
 function init(metadata) {
     Lib.initTranslations(Me);
-    return (extension = new Extension());
+    return new Extension();
 }
 

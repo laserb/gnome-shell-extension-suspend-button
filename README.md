@@ -2,3 +2,16 @@ gnome-shell-extension-suspend-button
 ====================================
 
 GNOME Shell Extension Suspend-Button for GNOME 3.10 / 3.12 / 3.14 / 3.16 / 3.18
+
+
+Installation
+============
+
+Run
+
+```
+make
+make install
+```
+
+This will build and install the extension to ``~/.local/share/gnome-shell/extensions/``.

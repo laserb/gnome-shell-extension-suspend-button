@@ -14,4 +14,12 @@ make
 make install
 ```
 
-This will build and install the extension to ``~/.local/share/gnome-shell/extensions/``.
+This will build and install the extension to ``~/.local/share/gnome-shell/extensions/``.   
+
+Alternatively run
+```
+make
+DESTDIR=/ make install
+```
+
+This will build and install the extension to ``$(DESTDIR)/usr/share/gnome-shell/extensions/``.

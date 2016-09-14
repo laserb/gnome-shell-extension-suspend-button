@@ -5,7 +5,12 @@ UUID = $(shell grep -E '^[ ]*"uuid":' ./metadata.json | sed 's@^[ ]*"uuid":[ ]*"
 BASE_MODULES = extension.js metadata.json COPYING README.md
 EXTRA_MODULES = lib.js prefs.js
 MSGSRC = $(wildcard locale/*/*/*.po)
-INSTALLBASE = ~/.local/share/gnome-shell/extensions
+
+ifeq ($(strip $(DESTDIR)),)
+INSTALLBASE = $(HOME)/.local/share/gnome-shell/extensions
+else
+INSTALLBASE = $(DESTDIR)/usr/share/gnome-shell/extensions
+endif
 INSTALLNAME = $(UUID)
 
 $(info UUID is "$(UUID)")

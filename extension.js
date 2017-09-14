@@ -20,10 +20,13 @@ const GLib = imports.gi.GLib;
 const Lang = imports.lang;
 const Mainloop = imports.mainloop;
 
+const Config = imports.misc.config;
+
 const LoginManager = imports.misc.loginManager;
 const Main = imports.ui.main;
 const StatusSystem = imports.ui.status.system;
 const PopupMenu = imports.ui.popupMenu;
+const BoxPointer = imports.ui.boxpointer;
 const ExtensionSystem = imports.ui.extensionSystem;
 
 const SHOW_TWO_BUTTONS = 'show-two-buttons';
@@ -185,11 +188,25 @@ const Extension = new Lang.Class({
     },
     
     _onPowerOffClicked: function() {
-        this.systemMenu._onPowerOffClicked()
+        gnomeShellVersion = Config.PACKAGE_VERSION.split(".")
+        if (gnomeShellVersion[0] == 3 && gnomeShellVersion[1] > 24) {
+            this.systemMenu.menu.itemActivated(BoxPointer.PopupAnimation.NONE);
+            this.systemMenu._systemActions.activatePowerOff()
+        }
+	else {
+            this.systemMenu._onPowerOffClicked()
+        }
     },
 
     _onSuspendClicked: function() {
-        this.systemMenu._onSuspendClicked();
+        gnomeShellVersion = Config.PACKAGE_VERSION.split(".")
+        if (gnomeShellVersion[0] == 3 && gnomeShellVersion[1] > 24) {
+	    this.systemMenu.menu.itemActivated(BoxPointer.PopupAnimation.NONE);
+            this.systemMenu._systemActions.activateSuspend()
+        }
+	else {
+            this.systemMenu._onSuspendClicked()
+        }
     }
 });
 

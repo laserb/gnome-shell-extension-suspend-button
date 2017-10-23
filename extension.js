@@ -52,7 +52,7 @@ const Extension = new Lang.Class({
         this._toggleSuspendDefaultID = this._settings.connect("changed::" + SUSPEND_DEFAULT, Lang.bind(this, function() {
             this._toggleSuspendDefault();
         }));
-        
+
         if (this._settings.get_boolean(SHOW_TWO_BUTTONS)) {
             this._createActions();
             this._removealtSwitcher();
@@ -78,7 +78,7 @@ const Extension = new Lang.Class({
     disable: function() {
         this._settings.disconnect(this._toggleTwoButtonsID);
         this._settings.disconnect(this._toggleSuspendDefaultID);
-        
+
         if (this._menuOpenStateChangedId) {
             this.systemMenu.menu.disconnect(this._menuOpenStateChangedId);
             this._menuOpenStateChangedId = 0;
@@ -86,11 +86,11 @@ const Extension = new Lang.Class({
 
            this._destroyActions();
         if (this._settings.get_boolean(SUSPEND_DEFAULT)) {
-              this._removealtStatusSwitcher();   
+              this._removealtStatusSwitcher();
         }
         this._addDefaultButton();
     },
-    
+
     _toggleTwoButtons: function() {
         if (this._settings.get_boolean(SHOW_TWO_BUTTONS)) {
             if (this._settings.get_boolean(SUSPEND_DEFAULT)) {
@@ -114,7 +114,7 @@ const Extension = new Lang.Class({
             }
         }
     },
-    
+
     _toggleSuspendDefault: function() {
         if (!this._settings.get_boolean(SHOW_TWO_BUTTONS)) {
             if (this._settings.get_boolean(SUSPEND_DEFAULT)) {
@@ -127,10 +127,10 @@ const Extension = new Lang.Class({
                 this._removealtStatusSwitcher();
                 this._addDefaultButton();
             }
-            
+
         }
     },
-    
+
     _createActions: function() {
         this._altsuspendAction = this.systemMenu._createActionButton('system-suspend-symbolic', _("Suspend"));
         this._altsuspendActionID = this._altsuspendAction.connect('clicked', Lang.bind(this, this._onSuspendClicked));
@@ -138,7 +138,7 @@ const Extension = new Lang.Class({
         this._altpowerOffAction = this.systemMenu._createActionButton('system-shutdown-symbolic', _("Power Off"));
         this._altpowerOffActionId = this._altpowerOffAction.connect('clicked', Lang.bind(this, this._onPowerOffClicked));
     },
-    
+
     _destroyActions: function() {
         if (this._altsuspendActionId) {
             this._altsuspendAction.disconnect(this._altsuspendActionId);
@@ -149,7 +149,7 @@ const Extension = new Lang.Class({
             this._altpowerOffAction.disconnect(this._altpowerOffActionId);
             this._altpowerOffActionId = 0;
         }
-        
+
         if (this._altsuspendAction) {
             this._altsuspendAction.destroy();
             this._altsuspendAction = 0;
@@ -160,25 +160,25 @@ const Extension = new Lang.Class({
             this._altpowerOffAction = 0;
         }
     },
-    
+
     _addDefaultButton: function() {
         this.systemMenu._actionsItem.actor.add(this.systemMenu._altSwitcher.actor, { expand: true, x_fill: false });
     },
-    
+
     _addSingleButtons: function() {
         this.systemMenu._actionsItem.actor.add(this._altsuspendAction, { expand: true, x_fill: false });
         this.systemMenu._actionsItem.actor.add(this._altpowerOffAction, { expand: true, x_fill: false });
     },
-    
+
     _removealtSwitcher: function() {
         this.systemMenu._actionsItem.actor.remove_child(this.systemMenu._altSwitcher.actor);
     },
-    
+
     _createaltStatusSwitcher: function() {
         this._altStatusSwitcher = new StatusSystem.AltSwitcher(this._altsuspendAction,this._altpowerOffAction);
         this.systemMenu._actionsItem.actor.add(this._altStatusSwitcher.actor, { expand: true, x_fill: false });
     },
-    
+
     _removealtStatusSwitcher: function() {
         if (this._altStatusSwitcher) {
             this.systemMenu._actionsItem.actor.remove_child(this._altStatusSwitcher.actor);
@@ -186,7 +186,7 @@ const Extension = new Lang.Class({
             this._altStatusSwitcher = 0;
         }
     },
-    
+
     _onPowerOffClicked: function() {
         gnomeShellVersion = Config.PACKAGE_VERSION.split(".")
         if (this.systemMenu.hasOwnProperty('_systemActions')) {

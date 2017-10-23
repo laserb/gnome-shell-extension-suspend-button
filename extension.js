@@ -189,22 +189,21 @@ const Extension = new Lang.Class({
     
     _onPowerOffClicked: function() {
         gnomeShellVersion = Config.PACKAGE_VERSION.split(".")
-        if (gnomeShellVersion[0] == 3 && gnomeShellVersion[1] > 24) {
+        if (this.systemMenu.hasOwnProperty('_systemActions')) {
             this.systemMenu.menu.itemActivated(BoxPointer.PopupAnimation.NONE);
             this.systemMenu._systemActions.activatePowerOff()
         }
-	else {
+        else {
             this.systemMenu._onPowerOffClicked()
         }
     },
 
     _onSuspendClicked: function() {
         gnomeShellVersion = Config.PACKAGE_VERSION.split(".")
-        if (gnomeShellVersion[0] == 3 && gnomeShellVersion[1] > 24) {
-	    this.systemMenu.menu.itemActivated(BoxPointer.PopupAnimation.NONE);
+        if (this.systemMenu.hasOwnProperty('_systemActions')) {
+            this.systemMenu.menu.itemActivated(BoxPointer.PopupAnimation.NONE);
             this.systemMenu._systemActions.activateSuspend()
-        }
-	else {
+        } else {
             this.systemMenu._onSuspendClicked()
         }
     }

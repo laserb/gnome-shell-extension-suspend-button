@@ -132,7 +132,7 @@ const Extension = new Lang.Class({
     },
 
     _createActions: function() {
-        this._altsuspendAction = this.systemMenu._createActionButton('system-suspend-symbolic', _("Suspend"));
+        this._altsuspendAction = this.systemMenu._createActionButton('media-playback-pause-symbolic', _("Suspend"));
         this._altsuspendActionID = this._altsuspendAction.connect('clicked', Lang.bind(this, this._onSuspendClicked));
 
         this._altpowerOffAction = this.systemMenu._createActionButton('system-shutdown-symbolic', _("Power Off"));

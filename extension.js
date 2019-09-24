@@ -70,8 +70,11 @@ const Extension = new Lang.Class({
             function(menu, open) {
                 if (!open)
                     return;
-                this._altsuspendAction.visible = true;
-                this._altpowerOffAction.visible = true;
+
+                if (this._altsuspendAction)
+                    this._altsuspendAction.visible = true;
+                if (this._altpowerOffAction)
+                    this._altpowerOffAction.visible = true;
             }));
     },
 
@@ -162,26 +165,26 @@ const Extension = new Lang.Class({
     },
 
     _addDefaultButton: function() {
-        this.systemMenu._actionsItem.actor.add(this.systemMenu._altSwitcher.actor, { expand: true, x_fill: false });
+        this.systemMenu.buttonGroup.add(this.systemMenu._altSwitcher.actor, { expand: true, x_fill: false });
     },
 
     _addSingleButtons: function() {
-        this.systemMenu._actionsItem.actor.add(this._altsuspendAction, { expand: true, x_fill: false });
-        this.systemMenu._actionsItem.actor.add(this._altpowerOffAction, { expand: true, x_fill: false });
+        this.systemMenu.buttonGroup.add(this._altsuspendAction, { expand: true, x_fill: false });
+        this.systemMenu.buttonGroup.add(this._altpowerOffAction, { expand: true, x_fill: false });
     },
 
     _removealtSwitcher: function() {
-        this.systemMenu._actionsItem.actor.remove_child(this.systemMenu._altSwitcher.actor);
+        this.systemMenu.buttonGroup.remove_child(this.systemMenu._altSwitcher.actor);
     },
 
     _createaltStatusSwitcher: function() {
         this._altStatusSwitcher = new StatusSystem.AltSwitcher(this._altsuspendAction,this._altpowerOffAction);
-        this.systemMenu._actionsItem.actor.add(this._altStatusSwitcher.actor, { expand: true, x_fill: false });
+        this.systemMenu.buttonGroup.add(this._altStatusSwitcher.actor, { expand: true, x_fill: false });
     },
 
     _removealtStatusSwitcher: function() {
         if (this._altStatusSwitcher) {
-            this.systemMenu._actionsItem.actor.remove_child(this._altStatusSwitcher.actor);
+            this.systemMenu.buttonGroup.remove_child(this._altStatusSwitcher.actor);
             this._altStatusSwitcher.actor.destroy();
             this._altStatusSwitcher = 0;
         }

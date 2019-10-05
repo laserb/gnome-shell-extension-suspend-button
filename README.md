@@ -1,7 +1,9 @@
 gnome-shell-extension-suspend-button
 ====================================
 
-GNOME Shell Extension Suspend-Button for GNOME 3.10 / 3.12 / 3.14 / 3.16 / 3.18 / 3.20 / 3.22 / 3.24 / 3.26 / 3.28 / 3.30
+GNOME Shell Extension Suspend-Button for GNOME 3.34
+
+For older versions of gnome-shell use the release/3.2x branch.
 
 
 Installation
